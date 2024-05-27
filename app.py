@@ -377,8 +377,8 @@ def toggle_modal(n1, n2, data, is_open):
             return [True, "Título del Modal", "Contenido de Proyección de aguas grises", "Contenido de Reducción del estrés hídrico", "Contenido de Ahorro económico proyectado", "Contenido de Potencial de riego de áreas verdes", ["Mensaje de error"], "Contenido de Reducción huella de carbono anual"]
     return [False, dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, [dash.no_update], dash.no_update]
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8050))
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 8080))
     app.run_server(debug=True, host='0.0.0.0', port=port)
 
 
