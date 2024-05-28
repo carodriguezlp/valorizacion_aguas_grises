@@ -183,7 +183,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             {'label': 'Escuela Básica G-N°352 Plazuela de Polpaico', 'value': 'Escuela Básica G-N°352 Plazuela de Polpaico'}
                         ],
                         placeholder="--Seleccionar--",
-                        style={'width': '60%', 'color': '#555555', 'margin-left': '20px'}
+                        style={'width': '70%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                 ]
             ),
@@ -210,7 +210,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             id={'type': 'matricula-input', 'index': 0},
                             type='number',
                             placeholder='Ingrese matrícula',
-                            style={'width': '40%', 'color': '#555555', 'margin-left': '20px', 
+                            style={'width': '50%', 'color': '#555555', 'margin-left': '20px', 
                                    'border-radius': '10px', 'border': '1px solid #888888', 'padding': '10px',
                                    'font-size': '1em'}
                         )
@@ -239,7 +239,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                         id={'type': 'dropdown-dias', 'index': 0},
                         options=[{'label': str(i), 'value': i} for i in range(8)],
                         placeholder="--Seleccionar--",
-                        style={'width': '60%', 'color': '#555555', 'margin-left': '20px'}
+                        style={'width': '70%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                     html.Br(),  # Línea de separación adicional
                     html.Button(
