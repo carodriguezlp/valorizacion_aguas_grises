@@ -7,6 +7,8 @@ import dash.exceptions # type: ignore
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+server = app.server
+
 # Define el layout de la ventana emergente
 ventana_emergente = dbc.Modal(
     [
@@ -378,8 +380,8 @@ def toggle_modal(n1, n2, data, is_open):
     return [False, dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, [dash.no_update], dash.no_update]
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False)
+    app.run_server(debug=True)
+
 
 
 
