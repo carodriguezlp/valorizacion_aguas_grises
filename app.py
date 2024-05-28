@@ -36,7 +36,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "90%"},
                             ),
                             width=12, md=6,
                         ),
@@ -183,7 +183,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             {'label': 'Escuela Básica G-N°352 Plazuela de Polpaico', 'value': 'Escuela Básica G-N°352 Plazuela de Polpaico'}
                         ],
                         placeholder="--Seleccionar--",
-                        style={'width': '50%', 'color': '#555555', 'margin-left': '20px'}
+                        style={'width': '80%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                 ]
             ),
@@ -210,7 +210,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             id={'type': 'matricula-input', 'index': 0},
                             type='number',
                             placeholder='Ingrese la matrícula',
-                            style={'width': '30%', 'color': '#555555', 'margin-left': '20px', 'text-align': 'left',
+                            style={'width': '80%', 'color': '#555555', 'margin-left': '20px', 'text-align': 'left',
                                    'border-radius': '10px', 'border': '1px solid #888888', 'padding': '10px',
                                    'font-size': '1em'}
                         )
@@ -239,7 +239,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                         id={'type': 'dropdown-dias', 'index': 0},
                         options=[{'label': str(i), 'value': i} for i in range(8)],
                         placeholder="Seleccione el número de días",
-                        style={'width': '50%', 'color': '#555555', 'margin-left': '20px'}
+                        style={'width': '80%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                     html.Br(),  # Línea de separación adicional
                     html.Button(
