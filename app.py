@@ -36,9 +36,9 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "400px"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                         dbc.Col(
                             dbc.Card(
@@ -52,9 +52,9 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "400px"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                     ]
                 ),
@@ -74,9 +74,9 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "400px"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                         dbc.Col(
                             dbc.Card(
@@ -91,9 +91,9 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "400px"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                     ]
                 ),
@@ -113,17 +113,17 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "400px"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                         dbc.Col(
                             html.Div(
                             html.Img(
                                 src="/assets/icon.png",  # Ruta de la imagen en la carpeta assets
                                 style={
-                                    "height": '250px',  # Ajusta el tamaño según sea necesario
-                                    "width": '250px',  # Ajusta el tamaño según sea necesario
+                                    "height": '100%',  # Ajusta el tamaño según sea necesario
+                                    "width": '100%',  # Ajusta el tamaño según sea necesario
                                     "object-fit": "contain",  # Ajusta la imagen para que se vea bien en el contenedor
                                     "border-radius": "0px"  # Bordes redondeados para que coincidan con el estilo de las tarjetas
                                 }
@@ -136,7 +136,7 @@ ventana_emergente = dbc.Modal(
                                     "width": "100%"
                                 }
                             ),
-                            width=6,
+                            width=12, md=6,
                         ),
                     ]
                 ),
