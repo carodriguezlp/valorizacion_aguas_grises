@@ -36,7 +36,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "90%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "95%"},
                             ),
                             width=12, md=6,
                         ),
@@ -52,7 +52,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "95%"},
                             ),
                             width=12, md=6,
                         ),
@@ -74,7 +74,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "95%"},
                             ),
                             width=12, md=6,
                         ),
@@ -91,7 +91,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "95%"},
                             ),
                             width=12, md=6,
                         ),
@@ -113,7 +113,7 @@ ventana_emergente = dbc.Modal(
                                     ),
                                 ],
                                 className="my-2",  # Agrega margen en la parte superior e inferior
-                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "100%"},
+                                style={"background-color": "#E6F7FF", "border": "2px solid #3399FF", "color": "#003366", "font-size": "1.5em", "padding": "10px", "border-radius": "15px", "height": "95%"},
                             ),
                             width=12, md=6,
                         ),
@@ -122,8 +122,8 @@ ventana_emergente = dbc.Modal(
                             html.Img(
                                 src="/assets/icon.png",  # Ruta de la imagen en la carpeta assets
                                 style={
-                                    "height": '100%',  # Ajusta el tamaño según sea necesario
-                                    "width": '100%',  # Ajusta el tamaño según sea necesario
+                                    "height": '60%',  # Ajusta el tamaño según sea necesario
+                                    "width": '60%',  # Ajusta el tamaño según sea necesario
                                     "object-fit": "contain",  # Ajusta la imagen para que se vea bien en el contenedor
                                     "border-radius": "0px"  # Bordes redondeados para que coincidan con el estilo de las tarjetas
                                 }
@@ -183,7 +183,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             {'label': 'Escuela Básica G-N°352 Plazuela de Polpaico', 'value': 'Escuela Básica G-N°352 Plazuela de Polpaico'}
                         ],
                         placeholder="--Seleccionar--",
-                        style={'width': '80%', 'color': '#555555', 'margin-left': '20px'}
+                        style={'width': '60%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                 ]
             ),
@@ -209,8 +209,8 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                         dcc.Input(
                             id={'type': 'matricula-input', 'index': 0},
                             type='number',
-                            placeholder='Ingrese la matrícula',
-                            style={'width': '80%', 'color': '#555555', 'margin-left': '20px', 'text-align': 'left',
+                            placeholder='Ingrese matrícula',
+                            style={'width': '60%', 'color': '#555555', 'margin-left': '20px', 'text-align': 'left',
                                    'border-radius': '10px', 'border': '1px solid #888888', 'padding': '10px',
                                    'font-size': '1em'}
                         )
@@ -238,8 +238,8 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                     dcc.Dropdown(
                         id={'type': 'dropdown-dias', 'index': 0},
                         options=[{'label': str(i), 'value': i} for i in range(8)],
-                        placeholder="Seleccione el número de días",
-                        style={'width': '80%', 'color': '#555555', 'margin-left': '20px'}
+                        placeholder="--Seleccionar--",
+                        style={'width': '60%', 'color': '#555555', 'margin-left': '20px'}
                     ),
                     html.Br(),  # Línea de separación adicional
                     html.Button(
