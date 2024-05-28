@@ -210,7 +210,7 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                             id={'type': 'matricula-input', 'index': 0},
                             type='number',
                             placeholder='Ingrese matrícula',
-                            style={'width': '60%', 'color': '#555555', 'margin-left': '20px', 'text-align': 'left',
+                            style={'width': '40%', 'color': '#555555', 'margin-left': '20px', 
                                    'border-radius': '10px', 'border': '1px solid #888888', 'padding': '10px',
                                    'font-size': '1em'}
                         )
