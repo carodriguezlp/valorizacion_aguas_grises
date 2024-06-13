@@ -380,7 +380,8 @@ def toggle_modal(n1, n2, data, is_open):
     return [False, dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, [dash.no_update], dash.no_update]
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run_server(debug=True, host='0.0.0.0', port=port)
 
 
 
