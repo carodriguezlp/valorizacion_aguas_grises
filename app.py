@@ -4,6 +4,10 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html, callback_context
 from dash.dependencies import Input, Output, State, ALL
 import dash.exceptions # type: ignore
+import locale
+
+# Configurar el locale para formatear los números
+locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -174,13 +178,13 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
                     dcc.Dropdown(
                         id={'type': 'dropdown', 'index': 0},
                         options=[
-                            {'label': 'San Antonio de Naltagua', 'value': 'San Antonio de Naltagua'},
+                            {'label': 'Escuela San Antonio de Naltagua', 'value': 'Escuela San Antonio de Naltagua'},
                             {'label': 'Colegio Challay', 'value': 'Colegio Challay'},
-                            {'label': 'El Melocotón', 'value': 'El Melocotón'},
+                            {'label': 'Escuela El Melocotón', 'value': 'Escuela El Melocotón'},
                             {'label': 'Liceo de Montenegro', 'value': 'Liceo de Montenegro'},
                             {'label': 'Escuela G-N°346 Santa Matilde', 'value': 'Escuela G-N°346 Santa Matilde'},
-                            {'label': 'Escuela Básica G-N°348', 'value': 'Escuela Básica G-N°348'},
-                            {'label': 'Escuela Básica G-N°352 Plazuela de Polpaico', 'value': 'Escuela Básica G-N°352 Plazuela de Polpaico'}
+                            {'label': 'Escuela G-N°348 Huechún', 'value': 'Escuela G-N°348 Huechún'},
+                            {'label': 'Escuela G-N°352 Plazuela de Polpaico', 'value': 'Escuela G-N°352 Plazuela de Polpaico'}
                         ],
                         placeholder="--Seleccionar--",
                         style={'width': '70%', 'color': '#555555', 'margin-left': '20px'}
@@ -327,15 +331,22 @@ def actualizar_modal(n_clicks_calcular, n_clicks_cerrar, is_open, escuela, matri
     huella_produccion = (ahorro_ano / 1000) * 0.00342809683924821
     huella_total = huella_tratamiento + huella_produccion
 
+# Funciones de formateo
+    def formatear_numero_entero(numero):
+        return locale.format_string("%d", numero, grouping=True)
+
+    def formatear_numero_decimal(numero):
+        return locale.format_string("%.2f", numero, grouping=True)
+
     # Preparar el contenido de la ventana modal
     proyeccion_aguas_grises = [
-        html.H4(f"¡Esta semana has reutilizado aproximadamente {int(agua_reutilizada)} litros de aguas grises!"),
+        html.H4(f"¡Esta semana has reutilizado aproximadamente {formatear_numero_entero(agua_reutilizada)} litros de aguas grises!"),
         html.Hr(),
         html.H4("Con un uso normal del agua, serás capaz de ahorrar:"),
         html.Ul([
-            html.Li(f"Al día: {int(ahorro_dia)} litros de agua"),
-            html.Li(f"Al mes: {int(ahorro_mes)} litros de agua"),
-            html.Li(f"Al año: {int(ahorro_ano)} litros de agua")
+            html.Li(f"Al día: {formatear_numero_entero(ahorro_dia)} litros de agua"),
+            html.Li(f"Al mes: {formatear_numero_entero(ahorro_mes)} litros de agua"),
+            html.Li(f"Al año: {formatear_numero_entero(ahorro_ano)} litros de agua")
         ])
     ]
 
@@ -344,20 +355,20 @@ def actualizar_modal(n_clicks_calcular, n_clicks_cerrar, is_open, escuela, matri
     ]
 
     ahorro_economico_proyectado = [
-        html.H4(f"Al día: ${int(ahorro_economico_dia)}"),
-        html.H4(f"Al mes: ${int(ahorro_economico_mes)}"),
-        html.H4(f"Al año: ${int(ahorro_economico_ano)}")
+        html.H4(f"Al día: ${formatear_numero_entero(ahorro_economico_dia)}"),
+        html.H4(f"Al mes: ${formatear_numero_entero(ahorro_economico_mes)}"),
+        html.H4(f"Al año: ${formatear_numero_entero(ahorro_economico_ano)}")
     ]
 
     potencial_riego_areas_verdes = [
-        html.H4(f"Pasto: {int(riego_pasto)} m²"),
-        html.H4(f"Especies nativas (ej: Quillay): {int(riego_nativas)} m²")
+        html.H4(f"Pasto: {formatear_numero_entero(riego_pasto)} m²"),
+        html.H4(f"Especies nativas (ej: Quillay): {formatear_numero_entero(riego_nativas)} m²")
     ]
 
     reduccion_huella_carbono_anual = [
-        html.H4(f"Reducción asociada al tratamiento de aguas residuales: {huella_tratamiento:.2f} kg CO₂ eq"),
-        html.H4(f"Reducción asociada a la producción de agua potable: {huella_produccion:.2f} kg CO₂ eq"),
-        html.H4(f"Reducción total huella de carbono: {huella_total:.2f} kg CO₂ eq")
+        html.H4(f"Reducción asociada al tratamiento de aguas residuales: {formatear_numero_decimal(huella_tratamiento)} kg CO₂ eq"),
+        html.H4(f"Reducción asociada a la producción de agua potable: {formatear_numero_decimal(huella_produccion)} kg CO₂ eq"),
+        html.H4(f"Reducción total huella de carbono: {formatear_numero_decimal(huella_total)} kg CO₂ eq")
     ]
 
     return (
