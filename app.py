@@ -4,10 +4,7 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html, callback_context
 from dash.dependencies import Input, Output, State, ALL
 import dash.exceptions # type: ignore
-import locale
 
-# Configurar el locale para formatear los números
-locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -272,6 +269,15 @@ app.layout = html.Div(style={'backgroundColor': '#ADD8E6', 'textAlign': 'center'
     ventana_emergente  # Incluye la ventana emergente en el layout
 ])
 
+# Función para formatear números enteros con separador de miles
+def formatear_numero_entero(numero):
+    return "{:,.0f}".format(numero).replace(",", ".")
+
+# Función para formatear números con dos decimales
+def formatear_numero_decimal(numero):
+    return "{:,.2f}".format(numero).replace(",", "X").replace(".", ",").replace("X", ".")
+
+
 # Callback para abrir y actualizar el contenido de la ventana emergente
 @app.callback(
     [
@@ -331,12 +337,6 @@ def actualizar_modal(n_clicks_calcular, n_clicks_cerrar, is_open, escuela, matri
     huella_produccion = (ahorro_ano / 1000) * 0.00342809683924821
     huella_total = huella_tratamiento + huella_produccion
 
-# Funciones de formateo
-    def formatear_numero_entero(numero):
-        return locale.format_string("%d", numero, grouping=True)
-
-    def formatear_numero_decimal(numero):
-        return locale.format_string("%.2f", numero, grouping=True)
 
     # Preparar el contenido de la ventana modal
     proyeccion_aguas_grises = [
